@@ -29,7 +29,7 @@ class TestTermSearcher(unittest.TestCase):
         expected = ['"Alice was beginning...\n',
                     'to_get9_!very\n',
                     '11111tired1111of1111sitting111111\n',
-                    '.      by her_sister..//``~~~~~~`.\n',
+                    '      by her_sister..//``~~~~~~`.\n',
                     'on9the bank,\n',
                     'and""of""having\n',
                     'er'
@@ -55,12 +55,12 @@ class TestTermSearcher(unittest.TestCase):
 
         term_searcher = TermSearcher(self.file_path)
         source_terms = term_searcher.get_source_terms()
-        expected = ['"Alice was beginning...',
-                    'to_get9_!very',
-                    '11111tired1111of1111sitting111111',
-                    '.      by her_sister..//``~~~~~~`.',
-                    'on9the bank,',
-                    'and""of""having'
+        expected = ['"Alice was beginning...\n',
+                    'to_get9_!very\n',
+                    '11111tired1111of1111sitting111111\n',
+                    '      by her_sister..//``~~~~~~`.\n',
+                    'on9the bank,\n',
+                    'and""of""having\n'
                     ]
         self.assertEqual(source_terms, expected)
 
@@ -72,8 +72,8 @@ class TestTermSearcher(unittest.TestCase):
 
         term_searcher = TermSearcher(self.file_path)
         found_terms = term_searcher.search_terms()
-        expected = ['to_get9_!very',
-                    '.      by her_sister..//``~~~~~~`.'
+        expected = ['to_get9_!very\n',
+                    '      by her_sister..//``~~~~~~`.\n'
                     ]
         self.assertEqual(found_terms, expected)
 

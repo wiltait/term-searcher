@@ -60,7 +60,7 @@ class TermSearcher:
             source_list (list): A list of strings with all terms in the file except the last one.
         """
         source_lines = self.file_content[:-1]
-        source_list = [line.strip() for line in source_lines]
+        source_list = [line for line in source_lines]
         return source_list
 
     def search_terms(self):
