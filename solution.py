@@ -33,9 +33,13 @@ class TermSearcher:
         Returns:
             file_content (list): A list of strings containing the lines of the file.
         """
-        with open(self.file, 'r', encoding='utf-8') as input_file:
-            file_content = input_file.readlines()
-        return file_content
+        try:
+            with open(self.file, 'r', encoding='utf-8') as input_file:
+                file_content = input_file.readlines()
+            return file_content
+        except FileNotFoundError:
+            print("File not found.")
+            sys.exit(1)
 
     def search_last_term(self):
         """

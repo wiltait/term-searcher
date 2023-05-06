@@ -2,6 +2,10 @@
 
 `TermSearcher` is a Python class that allows you to search and process terms in a file. It is capable of reading the contents of a file, searching for a specific term, finding all terms that contain the last term and processing those terms.
 
+# Assumptions
+
+It assumes that the file to be processed is in .txt format.
+
 ## Usage
 
 ### Requirements
